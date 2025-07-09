@@ -45,3 +45,56 @@ Recommends movies based on their content features, creating a profile of what th
 ### Results
 The system provides personalized movie recommendations that align with a user’s positive past experiences, using interpretable features and simple, effective algorithms.
 
+## Cluster Analysis
+
+Approach: Unsupervised Learning on Perceptual and Rating-Based Features  
+
+Groups movies into clusters based on similarities in their features — without prior labels — to uncover natural groupings and structure in the data.
+
+
+### Item Features Used
+
+- Tomatometer rating (critics)
+- Audience rating
+- Rating gap (audience - critics)
+- Log-transformed review counts (critics and audience)
+- Average sentiment score (from critics’ reviews)
+- Scaled release year
+- Frequent genres (One-Hot Encoded)
+
+
+### Methods
+
+- **PCA**: Dimensionality reduction to visualize and mitigate high-dimensional sparsity  
+- **K-Means**: Partitions movies into k clusters based on distance from centroids  
+- **Hierarchical Clustering (Ward)**: Builds a tree-like structure to reveal nested clusters  
+- **DBSCAN**: Density-based clustering to find arbitrary-shaped groups  
+  *(with poor results in this case)*
+
+### Workflow
+
+**Preprocessing:**
+
+- Cleaned, scaled, and transformed features (e.g., log-transform on counts, RobustScaler)
+- Filtered rare genres (<5% frequency)
+- Created new features like rating gap and sentiment mean
+
+**Model Execution:**
+
+- K-Means (optimal k = 3) via Elbow Method and Silhouette Score
+- Ward's Hierarchical clustering (3 clusters based on dendrogram)
+- DBSCAN (extensively tested, but unsuccessful due to density inconsistency)
+
+**Evaluation:**
+
+- Silhouette Score
+- Cluster Distribution
+- Sorted Similarity Matrix (SSM)
+- PCA Plots for visual separation
+
+### Results
+
+Clustering analysis grouped movies based on content and audience metrics.  
+**K-Means** produced the most distinct and interpretable clusters.  
+**DBSCAN** failed to detect meaningful groups due to inconsistent density.  
+**Hierarchical clustering** showed moderate structure, but clusters were more overlapping.
