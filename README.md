@@ -73,19 +73,19 @@ Groups movies into clusters based on similarities in their features — without 
 
 ### Workflow
 
-**Preprocessing:**
+**1. Preprocessing:**
 
 - Cleaned, scaled, and transformed features (e.g., log-transform on counts, RobustScaler)
 - Filtered rare genres (<5% frequency)
 - Created new features like rating gap and sentiment mean
 
-**Model Execution:**
+**2. Model Execution:**
 
 - K-Means (optimal k = 3) via Elbow Method and Silhouette Score
 - Ward's Hierarchical clustering (3 clusters based on dendrogram)
 - DBSCAN (extensively tested, but unsuccessful due to density inconsistency)
 
-**Evaluation:**
+**3. Evaluation:**
 
 - Silhouette Score
 - Cluster Distribution
