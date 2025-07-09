@@ -1,6 +1,7 @@
-# Rotten Tomatoes Movie: Recommendation System and Cluster Analysis
+# Rotten Tomatoes Study Case
+## Sentiment Analysis, clustering and a recommendation system using movie reviews
 This project analyzes movie reviews scraped from Rotten Tomatoes and builds a content-based movie recommendation system using natural language processing techniques and sentiment analysis.
-The goal is to classify review sentiment, recommend movies to a user based on their previous positive experiences, using movie metadata (genres, directors, actors, etc.) and clustering movies.
+The goals are to classify review sentiment, recommend movies to a user based on their previous positive experiences, using movie metadata (genres, directors, actors, etc.) and create clusters of movies.
 
 #### Dataset
 Source: Publicly available Rotten Tomatoes website, scraped as of 31/10/2020. Available on Kaggle.com.
